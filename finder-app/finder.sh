@@ -2,11 +2,10 @@
 
 # Check if exactly two arguments are provided
 if [ $# -ne 2 ]; then
-    echo "Error: Two arguments are required: <filesdir> <searchstr>"
+    echo "Error: Two arguments are required: filesdir and searchstr"
     exit 1
 fi
 
-# Assign arguments to variables
 filesdir="$1"
 searchstr="$2"
 
@@ -19,10 +18,8 @@ fi
 # Count the number of files in the directory and subdirectories
 num_files=$(find "$filesdir" -type f | wc -l)
 
-# Count the number of lines containing searchstr in all files
-num_matching_lines=$(grep -r "$searchstr" "$filesdir" 2>/dev/null | wc -l)
+# Count the number of lines containing searchstr
+num_lines=$(grep -r "$searchstr" "$filesdir" | wc -l)
 
 # Print the result
-echo "The number of files are $num_files and the number of matching lines are $num_matching_lines"
-
-exit 0
+echo "The number of files are $num_files and the number of matching lines are $num_lines"
