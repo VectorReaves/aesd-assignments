@@ -1,0 +1,17 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+jobs:
+  unit-test:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run unit tests
+        run: ./unit-test.sh
+  full-test:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run full tests
+        run: ./full-test.sh
