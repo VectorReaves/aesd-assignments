@@ -25,3 +25,4 @@ num_lines=$(grep -r "$searchstr" "$filesdir" | wc -l)
 echo "The number of files are $num_files and the number of matching lines are $num_lines"
 # Test Actions runner
 # Test Actions runner after removing large files
+# Test Actions runner after removing large files
