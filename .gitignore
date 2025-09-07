@@ -1,1 +1,4 @@
 actions-runner/
+build/
+student-test/assignment1/Test_validate_username_Runner.c
+test.sh.log
